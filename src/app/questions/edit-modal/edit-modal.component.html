@@ -1,0 +1,126 @@
+<div class="edit-modal">
+  <div class="edit-modal-body">
+    <div class="edit-modal_title">
+      <div class="edit-modal_close_btn">
+        <a href="" (click)="modalService.close('edit-modal')">
+          <img src="../../../assets/cross.svg" alt="Cross" style="width: 15px"/>
+        </a>
+      </div>
+      <p>Edit Question</p>
+    </div>
+
+<!--    <form (ngSubmit)="onSave()" [formGroup]="editForm" *ngIf="this.editForm">-->
+<!--      <div class="edit-modal-form_title form-element_block">-->
+<!--        <label for="title">Title</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="title" id="title" formControlName="title" required>-->
+<!--      </div>-->
+<!--      <div class="edit-modal-form_description form-element_block">-->
+<!--        <label for="description">Description</label>-->
+<!--        <br>-->
+<!--        <textarea name="description" id="description" rows="10" formControlName="description"></textarea>-->
+<!--      </div>-->
+
+<!--      <div class="edit-modal_form-topics" >-->
+<!--        <label for="topics">Topics</label>-->
+<!--        <br>-->
+<!--        <select name="topics" id="topics" #element >-->
+<!--          <option *ngFor="let topic of currentQuestion?.topics" [value]="topic">{{topic}}</option>-->
+<!--        </select>-->
+<!--        <div class="question-filter_form-addBtn">-->
+<!--          <button (click)="onAddTopic(element.value)">Add</button>-->
+<!--        </div>-->
+<!--        <ul class="topics_list">-->
+<!--          <div class="topics_list-block">-->
+<!--&lt;!&ndash;            <li  *ngFor="let topic of getControls(); let i = index">&ndash;&gt;-->
+<!--&lt;!&ndash;              {{topic}}&ndash;&gt;-->
+<!--&lt;!&ndash;              <a><img src="../../../assets/cross.svg" alt="Cross" style="width: 10px"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+<!--          </div>-->
+<!--        </ul>-->
+<!--      </div>-->
+
+<!--      <div class="type-maxLength_wrapper">-->
+<!--        <div class="edit-modal-form_type form-element_block">-->
+<!--          <label for="type">Type</label>-->
+<!--          <br>-->
+<!--          <select name="type" id="type" formControlName="type">-->
+<!--            <option value="code">code</option>-->
+<!--            <option value="text">text</option>-->
+<!--            <option value="video">video</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="edit-modal-form_max-length">-->
+<!--          <label for="maxlength">maxLength</label>-->
+<!--          <br>-->
+<!--          <input type="text" id="maxlength" name="maxLength" formControlName="maxLength">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="edit-modal-form_edit_btn">-->
+<!--        <button type="submit" style="cursor: pointer">Save</button>-->
+<!--      </div>-->
+<!--    </form>-->
+
+
+    <form (ngSubmit)="onSave(formElement)" #formElement='ngForm'>
+      <div class="edit-modal-form_title form-element_block">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title" id="title" [ngModel]="currentQuestion?.title" required>
+      </div>
+      <div class="edit-modal-form_description form-element_block">
+        <label for="description">Description</label>
+        <br>
+        <textarea name="description" id="description" rows="10" [ngModel]="currentQuestion?.description"></textarea>
+      </div>
+
+      <div class="edit-modal_form-topics" >
+        <label for="topics">Topics</label>
+        <br>
+        <select name="topics" id="topics" #element (click)="onPickTopicInModal(element.value)" ngModel>
+          <option *ngFor="let topic of currentQuestion?.topics" [value]="topic"  >{{topic}}</option>
+        </select>
+        <ul class="topics_list">
+          <div class="topics_list-block">
+            <li *ngFor="let topic of chosenTopics">
+              {{topic}}
+              <a (click)="onRemoveTopicFromModal(topic)"><img src="../../../assets/cross.svg" alt="Cross" style="width: 10px"></a>
+            </li>
+
+          </div>
+        </ul>
+      </div>
+
+<!--      <div class="question-filter_form-topics form-element_block">-->
+<!--        <label for="topics">Topics</label>-->
+<!--        <br>-->
+<!--        <input type="text" id="topics" name="topics" [ngModel]="currentQuestion?.topics.join(', ')">-->
+<!--      </div>-->
+
+      <div class="type-maxLength_wrapper">
+        <div class="edit-modal-form_type form-element_block">
+          <label for="type">Type</label>
+          <br>
+          <select name="type" id="type" [ngModel]="currentQuestion?.type" >
+            <option selected value="code">code</option>
+            <option value="text">text</option>
+            <option value="video">video</option>
+          </select>
+        </div>
+        <div class="edit-modal-form_max-length">
+          <label for="maxLength">maxLength</label>
+          <br>
+          <input type="text" id="maxLength" name="maxLength" [ngModel]="currentQuestion?.maxLength">
+        </div>
+      </div>
+
+      <div class="edit-modal-form_edit_btn">
+        <button type="submit" style="cursor: pointer">Save</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+<div class="edit-modal-background"></div>

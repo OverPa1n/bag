@@ -1,0 +1,110 @@
+app-edit-modal {
+  display: none;
+  .edit-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    .edit-modal_title {
+      background-color: #fafafa;
+      padding: 20px;
+      margin-bottom: 20px;
+      p {
+        font-size: 24px;
+        font-weight: 800;
+      }
+      .edit-modal_close_btn {
+        text-align: right;
+      }
+    }
+    .edit-modal-body {
+      //padding: 20px;
+      background: #fff;
+      width: 496px;
+      margin: 80px auto;
+      form {
+        padding: 20px;
+        input, select, textarea {
+          box-sizing: border-box;
+          width: 100%;
+          //padding: 2px 9px 9px;
+          margin: 5px 0 0;
+          padding: 8px 9px 10px;
+          border-radius: 2px;
+          border: solid 2px #dddddd;
+          background-color: #ffffff;
+        }
+        .edit-modal-form_edit_btn {
+          text-align: right;
+          margin: 40px 0;
+          button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 2px;
+            background-color: #007672;
+            font-size: 14px;
+            font-weight: 800;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+          }
+        }
+        .edit-modal-form_max-length {
+          width: 20%
+        }
+        .edit-modal-form_type {
+          width: 80%;
+          margin-right: 10px;
+        }
+        .form-element_block {
+          margin-bottom: 15px;
+        }
+        .type-maxLength_wrapper {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+    }
+  }
+
+  .edit-modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+  }
+}
+
+body.edit-modal-open {
+  overflow: hidden;
+}
+.topics_list {
+  list-style-type: none;
+  padding-left: 0;
+  .topics_list-block {
+    display: flex;
+    padding: 8px 9px;
+    height: 144px;
+    border-radius: 2px;
+    border: solid 2px #dddddd;
+    background-color: #ffffff;
+    li {
+      margin-right: 5px;
+      padding: 6px 9px 7px 8px;
+      border-radius: 2px;
+      background-color: #eeeeee;
+      height: 20px;
+    }
+  }
+
+}

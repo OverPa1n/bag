@@ -1,0 +1,224 @@
+mat-grid-tile {
+
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+}
+.wrapper {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+  h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  .question_block_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+  .question_block-btn {
+    width: 135px;
+    height: 40px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: #007672;
+    color: #ffff;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+  }
+}
+.form-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  form {
+    overflow: hidden;
+  }
+  .form-content {
+    padding: 20px;
+    form {
+      width: 100%;
+      .form-label {
+        font-size: 14px;
+        display: block;
+        padding: 10px 0 3px 10px;
+      }
+    }
+    .form-fields {
+      padding: 8px 9px 9px;
+      border-radius: 2px;
+      border: solid 2px #dddddd;
+      background-color: #ffffff;
+      width: 100%;
+      box-sizing: border-box;
+      height: auto;
+      .text-area {
+        height: 144px;
+      }
+    }
+  }
+
+}
+
+.block_describer {
+  padding: 20px 15px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+  background-color: #ffffff;
+
+}
+
+//.question-list_wrapper {
+//  width: 100%;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//mat-list {
+//  height: 100vh;
+//  overflow-y: auto;
+//}
+//
+//mat-form-field {
+//  width: 100%;
+//}
+//.mat-chip-block {
+//  display: block;
+//}
+//
+//.question_topics-field {
+//  height: 20vh;
+//}
+//
+//.question_list-block {
+//  padding: 20px 15px;
+//  a {
+//    cursor: pointer;
+//
+//  }
+//  .question_list-item {
+//    border-bottom: 1px solid black;
+//
+//    .question_list-title {
+//      font-size: 13px;
+//      font-weight: 600;
+//      letter-spacing: normal;
+//      color: #101820;
+//    }
+//
+//    .question_list-topics {
+//      margin: 8px 0;
+//      span {
+//        display: inline-block;
+//        font-size: 11px;
+//        padding: 1px 3px;
+//        border-radius: 2px;
+//        background-color: #eeeeee;
+//      }
+//    }
+//    .question_list-description {
+//      margin-right: 20px;
+//      p {
+//        white-space: nowrap;
+//        overflow: hidden; /* Обрезаем всё за пределами блока */
+//        text-overflow: ellipsis; /* Добавляем многоточи */
+//        color: #101820;
+//        font-size: 0.8rem;
+//      }
+//    }
+//  }
+//  .edit_btn {
+//    display: block;
+//    text-align: right;
+//  }
+//}
+
+//.card-closed {
+//  white-space: nowrap;
+//}
+//.card-open {
+//  white-space: normal;
+//}
+
+.question_block-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+.question_block-header {
+
+  padding: 15px 30px 13px 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+  background-color: #ffffff;
+
+}
+.question_block_items {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.question_block_items-sort {
+  text-align: right;
+}
+
+
+.question_block-content {
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+
+
+.question_block-list {
+  padding: 15px 30px 0 20px;
+  &:hover {
+    background-color: rgba(0, 118, 114, 0.1);
+  }
+  border-bottom: 1px solid black;
+}
+.question_block-list:hover .edit_btn {
+  visibility: visible;
+}
+.question_block_list-header {
+  display: flex;
+  justify-content: space-between;
+}
+.question_block_list-topics {
+  span {
+            display: inline-block;
+            font-size: 11px;
+            padding: 1px 3px;
+            border-radius: 2px;
+            background-color: #eeeeee;
+  }
+}
+
+.question_block_list-description {
+          color: #101820;
+          font-size: 0.8rem;
+  display: flex;
+}
+
+
+
+.edit_btn {
+  visibility: hidden;
+}
+
+.wrp {
+  height: 100vh;
+}

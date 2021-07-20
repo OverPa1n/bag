@@ -1,0 +1,109 @@
+<div class="wrapper">
+  <div class="question_block_content">
+    <div class="question_block-title">
+      <h1>Library questions</h1>
+    </div>
+    <div>
+      <button class="question_block-btn">create new</button>
+    </div>
+  </div>
+
+  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="10px">
+
+    <mat-grid-tile class="form-column" rowspan="3" colspan="1">
+      <div class="form-wrapper">
+        <div class="block_describer">Filter Settings</div>
+        <div class="form-content">
+          <form>
+            <label class="form-label" for="title">Title</label>
+            <div>
+              <input class="form-fields" type="text" id="title" name="title" placeholder="Type question name">
+            </div>
+
+            <label class="form-label" for="type">Type</label>
+            <div>
+              <select class="form-fields" id="type" required>
+                <option hidden>Select question type</option>
+                <option value="code">code</option>
+                <option value="js">js</option>
+                <option value="node">node</option>
+                <option value="angular">angular</option>
+              </select>
+            </div>
+            <label class="form-label" for="topics">Topics</label>
+            <div>
+              <div class="form-fields question_topics-field">
+                <mat-form-field class="example-chip-list" appearance="none" id="topics">
+                  <mat-chip-list #chipList aria-label="Topics selection">
+                    <mat-chip *ngFor="let topic of topics" [selectable]="selectable"
+                              [removable]="removable" (removed)="remove(topic)">
+                      {{topic.name}}
+                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input [placeholder]="clearPlaceholder"
+                           #addTopicInp
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           (matChipInputTokenEnd)="add($event,addTopicInp)"
+                    >
+                  </mat-chip-list>
+                </mat-form-field>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <!--    Start question list-->
+    <mat-grid-tile rowspan="3" colspan="2">
+      <div class="question_block-wrapper">
+        <div class="question_block-header">
+          <div class="question_block_items">
+            <div class="question_block_items-title">
+              <p>Questions(100)</p>
+            </div>
+            <div class="question_block_items-sort">
+              <span>time/min </span>
+              <br>
+              <img src="../../assets/arrowDown.png" alt="Pic">
+            </div>
+          </div>
+        </div>
+<!-- -------------------------------------------------------- -->
+
+        <div class="question_block-content">
+          <div class="question_block-list">
+            <div class="question_block_list-header">
+              <div>
+                <p class="title">Title</p>
+              </div>
+              <div>
+                <p class="time">12</p>
+              </div>
+            </div>
+            <div class="question_block_list-topics">
+              <span>Js</span>
+              <span>Js</span>
+            </div>
+            <div class="question_block_list-description">
+              <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cum debitis deleniti dolor eaque
+                  eius esse facere minima mollitia, odio pariatur perferendis quae quas quasi sit, temporibus veniam!
+                  Ducimus, quo.</p>
+              </div>
+              <div>
+                <a href="#" class="edit_btn"> <img src="../../assets/arrowRight.svg" alt="Pic"></a>
+                <a href="#" class="edit_btn"> <img src="../../assets/edit.png" alt="Pic"></a>
+              </div>
+            </div>
+          </div>
+<!--          new list-->
+
+        </div>
+
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
